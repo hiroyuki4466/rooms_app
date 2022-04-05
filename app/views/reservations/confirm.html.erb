@@ -1,0 +1,51 @@
+<div class = "confirm_page">
+  <table class = "confirm_table">
+    <tr>
+      <td class = "confirm_title">予約内容確認</td>
+    </tr>
+    <tr>
+      <td>¥<%= @reservation.room.price %>/ 日</td>
+    </tr>
+    <%= form_with(model: @reservation, method: :post, local: true) do |f| %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <tr>
+      <th class = "confirm_table_th">開始日:</th>
+      <td class = "confirm_table_td">
+      <%= @reservation.start_date %>
+      <%= f.hidden_field :start_date %>
+      </td>
+    </tr>
+    <tr>
+      <th class = "confirm_table_th">終了日:</th>
+      <td class = "confirm_table_td">
+      <%= @reservation.end_date %>
+      <%= f.hidden_field :end_date %>
+      </td>
+    </tr>
+    <tr>
+      <th class = "confirm_table_th">使用日数:</th>
+      <td class = "confirm_table_td"><%= @reservation.total_days %>日</td>
+    </tr>
+    <tr>
+      <th class = "confirm_table_th">人数:</th>
+      <td class = "confirm_table_td">
+      <%= @reservation.number_of_people %>人
+      <%= f.hidden_field :number_of_people %>
+      </td>
+    </tr>
+    <tr>
+      <th class = "confirm_table_th">合計金額:</th>
+      <td class = "confirm_table_td">¥ <%= @reservation.total_price %></td>
+    </tr>
+    <tr>
+      <td class = "confirm_message">*上記でよろしければ「予約を確定」を押してください</td>
+    </tr>
+    <tr>
+      <td><%= f.submit "予約を確定", class: "reservation_button" %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit "ルーム詳細に戻る", name: :back, class: "detail_back_button" %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
