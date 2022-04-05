@@ -1,0 +1,637 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import "bootstrap";
+/*フラッシュメッセージ*/
+.notice {
+  background-color: #CCFFFF;
+  color: white;
+  font-size: 5px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.alert {
+  background-color: #FF3333;
+  color: white;
+  height: 10px;
+  font-size: 10px;
+  margin-bottom: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.user_error_message_ul {
+  list-style: none;
+}
+
+.user_error_message {
+  background-color: #FF3333;
+  color: white;
+  height: 10px;
+  font-size: 10px;
+  margin-bottom: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.reservation_error_message_ul {
+  margin-bottom: 0;
+}
+
+.reservation_error_message {
+  text-align: center;
+  background-color: #FF3333;
+  color: white;
+}
+
+/*トップページ、ヘッダー・フッター*/
+.top_page {
+  background-image: url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg");
+  background-size: cover;
+  position: relative;
+  height: 600px;
+}
+
+.site_logo {
+  width: 250px;
+}
+
+header {
+  height: 80px;
+}
+
+footer {
+  height: 300px;
+  text-align: center;
+}
+
+.footer_logo {
+  position: relative;
+  top: 50%;
+}
+
+header , footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.left_nav {
+  display: flex;
+  align-items: center;
+}
+
+.header_search_field_container {
+  display: flex;
+}
+
+.header_search_field {
+  margin-left: 15px;
+  height: 40px;
+}
+
+.guest_buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  bottom: 60px;
+  margin-right: 30px;
+}
+
+.top_sign_in_button , .top_sign_up_button {
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+.top_sign_in_button {
+  background-color: #4a90e2;
+}
+
+.top_sign_up_button {
+  background-color: gray;
+  margin-left: 10px;
+}
+
+.header_user_image {
+  width: 80px;
+  height: 70px;
+  border-radius: 50px;
+}
+
+.right_nav {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 70px;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.header_user_name {
+  display: flex;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.user_nav {
+  display: block;
+}
+
+.user_menu_ul {
+  list-style: none;
+  background-color: white;
+  position: relative;
+  right: 25px;
+  z-index: 2;
+  width: 150px;
+  padding: 0;
+  text-align: center;
+}
+
+.user_menu_ul li {
+  height: 0;
+  overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.user_menu {
+  color: black;
+  font-size: 15px;
+}
+
+.hidden_menu {
+  display: block;
+  color: #fff;
+  cursor :pointer;
+}
+
+#input {
+  display: none;
+}
+
+#input:checked ~ .user_menu_ul li {
+  height: 54px;
+  opacity: 1;
+}
+
+.top_page_table {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  left: 100px;
+  top: 100px;
+  border-collapse: separate;
+  border-spacing: 5px;
+  padding: 25px;
+}
+
+.top_page_title {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.top_search_area {
+  width: 100%;
+}
+
+.top_search_button {
+  width: 100%;
+  background-color: #4a90e2;
+  color: white;
+}
+
+.recommend_message {
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.area_images {
+  width: 300px;
+  height: 400px;
+  margin: 0 0 40px 15px;
+}
+
+.city_name {
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  position: relative;
+  top: 400px;
+  left: 130px;
+}
+
+/*ログイン、アカウント作成ページ*/
+.sign_in_page, .sign_up_page {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sign_in_theme, .sign_up_theme {
+  margin-top: 30px;
+}
+
+.sign_in_field, .sign_up_field {
+  padding: 5px 15px;
+  margin: 20px 10px;
+  width: 300px;
+}
+
+.sign_in_actions, .sign_up_actions {
+  margin: 20px 0;
+}
+
+.sign_in_button, .sign_up_button {
+  color: white;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #4a90e2;
+  padding: 5px 15px;
+}
+
+.sign_up_link, .sign_in_link {
+  width: 300px;
+  text-decoration: none;
+  color: #4a90e2;
+}
+
+.required {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  padding: 5px;
+}
+
+/*アカウントビューページ*/
+.account_show_table {
+  border: 1px solid #EEEEEE;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 20px;
+  height: 400px;
+  width: 600px;
+  position: relative;
+  bottom: 50px;
+}
+
+.account_show_title {
+  font-size: 25px;
+  position: relative;
+  left: 200px;
+}
+
+.account_edit_link {
+  color: white;
+  background-color: #4a90e2;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 150px;
+  padding: 5px 15px;
+  position: relative;
+  left: 230px;
+}
+
+/*アカウント編集ページ*/
+.account_edit_table {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px 20px;
+  border: 1px solid #EEEEEE;
+}
+
+.account_edit_title {
+  font-size: 25px;
+  position: relative;
+  left: 230px;
+}
+
+.account_edit_field {
+  width: 300px;
+}
+
+.account_edit_actions {
+  position: relative;
+  left: 250px;
+}
+
+.account_edit_button {
+  color: white;
+  background-color: #4a90e2;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px 15px;
+  width: 150px;
+}
+
+.back_button {
+  color: #4a90e2;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 8px 58px;
+}
+
+/*プロフィール画面*/
+.profile_register_table {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px 40px;
+  border: 1px solid #EEEEEE;
+  position: relative;
+  bottom: 50px;
+}
+
+.profile_register_title {
+  font-size: 25px;
+  position: relative;
+  left: 160px;
+}
+
+.profile_register_label {
+  margin-right: 10px;
+}
+
+.profile_register_field {
+  width: 300px;
+}
+
+.profile_register_area {
+  height: 180px;
+  width: 300px;
+}
+
+.profile_update_button {
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  background-color: #4a90e2;
+  padding: 5px 15px;
+  position: relative;
+  left: 200px;
+}
+
+.profile_user_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+/*アカウント共通メニュー*/
+.shared_container {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.shared_menu {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/*ルーム登録*/
+.room_register_menu {
+  margin-top: 40px;
+  margin-left: 80px;
+}
+
+.register_attend {
+  font-size: 20px;
+  color: #4a90e2;
+}
+
+.room_register_table {
+  position: relative;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 50px;
+  border: 1px solid #EEEEEE;
+}
+
+.room_register_field {
+  padding: 5px 15px;
+  width: 300px;
+}
+
+.room_register_area {
+  padding: 5px 15px 80px 15px;
+  width: 300px;
+}
+
+.room_register_image {
+  width: auto;
+}
+
+.room_register_button {
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  background-color: #4a90e2;
+  padding: 5px 15px;
+  position: relative;
+  left: 200px;
+}
+
+.room_register_label {
+  margin-right: 5px;
+}
+
+/*登録ルーム一覧ページ*/
+.my_rooms_title {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.my_rooms_table {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px;
+  border: 1px solid #EEEEEE;
+  width: 80%;
+}
+
+.room_image {
+  width: 250px;
+  height: 150px;
+}
+
+/*ルーム詳細ページ*/
+.rooms_detail_page {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.rooms_detail_nav {
+  display: inline-block;
+}
+
+.rooms_detail_room_image {
+  width: 700px;
+  height: 400px;
+  margin-left: 60px;
+}
+
+.room_detail_user_image {
+  width: 80px;
+  height: 80px;
+  margin-top: 30px;
+  margin-left: 60px;
+  border-radius: 50px;
+}
+
+.rooms_detail_info {
+  display: flex;
+}
+
+.rooms_detail_list {
+  margin: 30px 0 0 40px;
+}
+
+.rooms_detail_room_name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.room_detail_introduction {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px 20px;
+  margin-left: 180px;
+}
+
+.rooms_detail_table {
+  border-collapse: separate;
+  border-spacing: 50px;
+  border: 1px solid #EEEEEE;
+  position: relative;
+  left: 70px;
+  bottom: 100px;
+}
+
+.rooms_detail_reservation_btn {
+  color: white;
+  background-color: #4a90e2;
+  border-radius: 5px;
+  position: relative;
+  left: 120px;
+}
+
+/*ルーム検索結果*/
+.search_count {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.room_search_table {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px;
+  border: 1px solid #EEEEEE;
+  width: 80%;
+}
+
+/*予約確認ページ*/
+.confirm_title {
+  font-size: 25px;
+  position: relative;
+  left: 180px;
+}
+
+.confirm_table {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px;
+  border: 1px solid #EEEEEE;
+}
+
+.reservation_button {
+  color: white;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  padding: 5px 15px;
+  width: 200px;
+  position: relative;
+  left: 160px;
+}
+
+.detail_back_button {
+  color: #4a90e2;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 15px;
+  width: 200px;
+  position: relative;
+  left: 160px;
+}
+
+.confirm_table_th {
+  position: relative;
+  left: 50px;
+}
+
+.confirm_table_td {
+  position: relative;
+  right: 50px;
+}
+
+.confirm_message {
+  font-weight: bold;
+  position: relative;
+  left: 65px;
+}
+
+/*予約完了ページ*/
+.reserved_show_table {
+  position: relative;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px;
+  border: 1px solid #EEEEEE;
+  padding: 15px 40px;
+  width: 50%;
+}
+
+/*予約済みルーム一覧ページ*/
+.reserved_rooms_title {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.reserved_rooms_table {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 30px;
+  border: 1px solid #EEEEEE;
+  width: 90%;
+}
