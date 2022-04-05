@@ -1,0 +1,53 @@
+<div class = "top_page">
+  <table class = "top_page_table">
+    <tr>
+      <th class = "top_page_title">Potepan Shareで</th>
+    </tr>
+    <tr>
+      <th class = "top_page_title">まだ体験したことのない旅をしよう</th>
+    </tr>
+    <tr>
+      <th>エリア</th>
+    </tr>
+    <tr class = "top_page_table_tr">
+      <td class="search_area">
+      <%= form_with url:rooms_search_path, local: true, method: :get do |f| %>
+      <%= f.text_field :area, value: @area, placeholder: "東京", class: "top_search_area" %>
+      </td>
+    </tr>
+    <tr class = "top_page_table_tr">
+      <td><%= f.submit "探す", :address => nil , class: "top_search_button"%></td> 
+      <% end %> 
+    </tr>
+  </table>
+</div>
+
+<h4 class = "recommend_message">オススメのエリア</h4>
+  <table>
+    <tr>
+      <th>
+      <span class = "city_name">東京</span>
+      <a href = "http://localhost:3000/rooms/search?utf8=%E2%9C%93&area=%E6%9D%B1%E4%BA%AC">
+      <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg', class: "area_images" %>
+      </a>
+      </th>
+      <th>
+      <span class = "city_name">大阪</span>
+      <a href = "http://localhost:3000/rooms/search?utf8=%E2%9C%93&area=%E5%A4%A7%E9%98%AA">
+      <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg', class: "area_images" %>
+      </a>
+      </th>
+      <th>
+      <span class = "city_name">京都</span>
+      <a href = "http://localhost:3000/rooms/search?utf8=%E2%9C%93&area=%E4%BA%AC%E9%83%BD">
+      <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg', class: "area_images" %>
+      </a>
+      </th>
+      <th>
+      <span class = "city_name">札幌</span>
+      <a href = "http://localhost:3000/rooms/search?utf8=%E2%9C%93&area=%E6%9C%AD%E5%B9%8C">
+      <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg', class: "area_images" %>
+      </a>
+      </th>
+    </tr>
+  </table>

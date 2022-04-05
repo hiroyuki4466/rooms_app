@@ -1,0 +1,55 @@
+<div class = "room_register_page">
+  <%= render "shared/error", obj: @room %>
+  <p class = "room_register_menu"><%= link_to "基本情報", new_room_path, {class: "register_attend"} %></p>
+
+  <div class = "room_register_container">
+  <%= form_with model: @room do |f| %>
+    <table class = "room_register_table">
+      <tr>
+        <th class = "room_register_title">ルーム情報登録</th>
+      </tr>
+      <tr>
+        <th>
+          <%= f.label :room_name, "ルーム名", class: "room_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+          <%= f.text_field :room_name, placeholder: "ルーム名を入力", class: "room_register_field" %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= f.label :introduction, "ルーム紹介", class: "room_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+          <%= f.text_area :introduction, placeholder: "ルーム説明を入力", class: "room_register_area" %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= f.label :price, "料金", class: "room_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+          <%= f.text_field :price, placeholder: "一日あたりの料金を入力", class: "room_register_field" %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= f.label :address, "住所", class: "room_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+          <%= f.text_field :address, placeholder: "住所を入力", class: "room_register_field" %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= f.label :room_image, "ルーム画像", class: "room_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td><%= f.file_field :room_image, id: :room_room_image, class: "room_register_image" %></td>
+      </tr>
+      <tr>
+        <th><%= f.submit "登録", class: "room_register_button" %></th>
+      </tr>
+    </table>
+  <% end %>
+  </div>
+</div>

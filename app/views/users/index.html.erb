@@ -1,0 +1,20 @@
+<h4>All users</h4>
+  <table class = "my_rooms_table">
+    <thead class = "my_rooms_thead">
+      <tr>
+        <th>ユーザー名</th>
+        <th>メールアドレス</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+
+    <tbody class = "my_rooms_tbody">
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to "削除", user, method: :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
