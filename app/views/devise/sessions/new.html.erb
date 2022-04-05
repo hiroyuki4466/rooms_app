@@ -1,0 +1,29 @@
+<div class = "sign_in_page">
+  <h4 class = "sign_in_theme">ログイン</h4>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div>
+  <tr>
+    <td>
+    <%= f.label "*必須", class: "required" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "sign_in_field" %>
+    </td>
+  </tr>
+</div>
+
+<div>
+  <tr>
+    <td>
+    <%= f.label "*必須", class: "required" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "sign_in_field" %>
+    </td>
+  </tr>
+</div>
+
+  <div class="sign_in_actions">
+    <%= f.submit "ログイン", class: "sign_in_button" %>
+  </div>
+<% end %>
+
+<%= link_to "新しいアカウントを作成", "/users/sign_up", class: "sign_up_link" %>
+</div>

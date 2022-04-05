@@ -1,0 +1,46 @@
+<div class = "account_edit_page">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+  <table class = "account_edit_table">
+    <tr>  
+      <th class = "account_edit_title">アカウント編集</th>
+    </tr>
+    <tr>
+      <th><%= f.label :email, "メールアドレス" %></th>
+      <td>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力してください", class: "account_edit_field" %>
+      </td>
+    </tr>
+    
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <tr>
+      <th><%= f.label :password, "変更後パスワード（変更する場合のみ入力）" %></th>
+      <td>
+      <%= f.password_field :password, autocomplete: "new_password", class: "account_edit_field" %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label :confirm_password, "パスワード確認用（変更する場合のみ入力)" %></th>
+      <td>
+      <%= f.password_field :confirm_password, autocomplete: "new_password", class: "account_edit_field" %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label :current_password, "現在のパスワード" %></th>
+      <td>
+      <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワードを入力", class: "account_edit_field" %>
+      </td>
+    </tr>
+    <tr class = "account_edit_actions">
+      <td><%= f.submit "更新", class: "account_edit_button" %></td>
+    </tr>
+  <% end %>
+    <tr class = "account_edit_actions">
+      <td><%= link_to "戻る", users_account_path, class: "back_button" %></td>
+    </tr>
+  </table>
+</div>
