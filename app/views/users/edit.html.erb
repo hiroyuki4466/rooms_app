@@ -1,0 +1,48 @@
+<div class = "profile_register_page">
+  <%= render "shared/user" %>
+  <div>
+    <%= form_with model: @user, url: user_path(@user), local: true do |f| %>
+    <table class = "profile_register_table">
+      <tr>
+        <th class = "profile_register_title">プロフィール</th>
+      </tr>
+      <tr>
+        <td>
+        <% if current_user.user_image.attached? %>
+        <%= image_tag current_user.user_image, class: "profile_user_image" %>
+        <% else %>
+        <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg', class: "profile_user_image" %>
+        <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <%= f.label :user_image, "アイコン画像", class: "profile_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+        <%= f.file_field :user_image, id: :user_user_image, class: "profile_register_field" %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <%= f.label :name, "名前", class: "profile_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+        <%= f.text_field :name, placeholder: "名前を入力", class: "profile_register_field" %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <%= f.label :user_introduction, "自己紹介", class: "profile_register_label" %><span class = "required">*必須</span>
+        </th>
+        <td>
+        <%= f.text_field :user_introduction, placeholder: "自己紹介を入力", class: "profile_register_area" %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= f.submit "更新", class: "profile_update_button" %></th>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
